@@ -7,6 +7,6 @@ import org.junit.jupiter.api.Test;
 class CalculatorControllerIntTest {
     @Test
     public void test() {
-        Assertions.assertEquals(1, CalculatorController.sum("One", "Two"));
+        Assertions.assertEquals(3, CalculatorController.sum("One", "Two"));
     }
 }

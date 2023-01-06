@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
     @Test
-    private void test() {
-        Assertions.assertEquals(1, Calculator.sum(3,2));
+    public void test() {
+        Assertions.assertEquals(5, Calculator.sum(3,2));
     }
 }

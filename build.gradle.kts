@@ -10,7 +10,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+}
+
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 //add intTest souce set
@@ -30,7 +36,7 @@ val intTestImplementation by configurations.getting {
 configurations["intTestRuntimeOnly"].extendsFrom(configurations.runtimeOnly.get())
 
 dependencies {
-    intTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    intTestImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 val integrationTest = task<Test>("integrationTest") {
@@ -46,8 +52,5 @@ val integrationTest = task<Test>("integrationTest") {
     }
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
 
 //tasks.check { dependsOn(integrationTest) } - now we want to be able to build without execution intTests
